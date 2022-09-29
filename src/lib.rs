@@ -10,4 +10,6 @@ pub trait VTable {
     fn new(base: *mut *mut usize) -> Self where Self: Sized;
 
     fn as_ptr(&self) -> *const usize;
+
+    fn get_value<T: Sized>(&self, offset: usize) -> T;
 }
